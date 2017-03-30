@@ -148,28 +148,40 @@ using MySql.Data.MySqlClient;
                 name.Text = itemNames[i - 1];
                 Size size = TextRenderer.MeasureText(name.Text, name.Font);
                 name.Width = size.Width;
+                name.BackColor = Color.LightGray;
+                name.BorderStyle = BorderStyle.None;
                 name.Height = size.Height;
                 // name.Multiline = true;
                 table.Controls.Add(name, 0, i);
+
                 TextBox desc = new TextBox();
                 desc.Text = itemDecriptions[i - 1];
                 size = TextRenderer.MeasureText(desc.Text, desc.Font);
+                desc.BackColor = Color.LightGray;
+                desc.BorderStyle = BorderStyle.None;
                 desc.Width = size.Width;
                 desc.Height = size.Height;
                 //  desc.Multiline = true;
                 table.Controls.Add(desc, 1, i);
+
                 TextBox price = new TextBox();
+                price.BackColor = Color.LightGray;
+                price.BorderStyle = BorderStyle.None;
                 price.Text = itemPrices[i - 1];
                 size = TextRenderer.MeasureText(price.Text, price.Font);
                 price.Width = size.Width;
                 price.Height = size.Height;
                 table.Controls.Add(price, 2, i);
+
                 TextBox quality = new TextBox();
                 quality.Text = itemQuality[i - 1];
+                quality.BorderStyle = BorderStyle.None;
+                quality.BackColor = Color.LightGray;
                 size = TextRenderer.MeasureText(quality.Text, quality.Font);
                 quality.Width = size.Width;
                 quality.Height = size.Height;
                 table.Controls.Add(quality, 3, i);
+
                 CheckBox checkbox = new CheckBox();
                 checkbox.Name = (i - 1).ToString();
                 table.Controls.Add(checkbox, 4, i);
