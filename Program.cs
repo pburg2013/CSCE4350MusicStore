@@ -16,7 +16,7 @@ namespace MusicStore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Store());
+            Application.Run(new MainForm());
         }
     }
 }
