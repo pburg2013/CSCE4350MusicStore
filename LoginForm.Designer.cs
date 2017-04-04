@@ -1,4 +1,4 @@
-﻿namespace MusicStore
+namespace MusicStore
 {
     partial class LoginForm
     {
@@ -194,7 +194,7 @@
             // replyBox
             // 
             this.replyBox.BackColor = System.Drawing.Color.LightGray;
-            this.replyBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.replyBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.replyBox.Location = new System.Drawing.Point(82, 301);
             this.replyBox.Multiline = true;
             this.replyBox.Name = "replyBox";
