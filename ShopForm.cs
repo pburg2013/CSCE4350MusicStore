@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,7 +34,7 @@ using MySql.Data.MySqlClient;
         {
             InitializeComponent();
             string myConnString = "datasource=127.0.0.1;port=3307;username=root;password=password;database=musicstore;";
-        
+          
             textBox = this.searchBox;
             myConnection = new MySqlConnection(myConnString);
             this.DoubleBuffered = true;
