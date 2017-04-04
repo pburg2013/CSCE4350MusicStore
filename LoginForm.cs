@@ -18,12 +18,14 @@ namespace MusicStore
         string fname { get; set; }
         string query { get; set; }
         string lname { get; set; }
+        List<int> itemIDs = new List<int>();
         MySqlConnection myConnection { get; set; }
         MySqlCommand commandDatabase { get; set; }
         MySqlDataReader reader { get; set; }
 
-        public LoginForm()
+        public LoginForm(List<int> items)
         {
+            itemIDs = items; 
             InitializeComponent();
             string myConnString = "datasource=127.0.0.1;port=3307;username=root;password=password;database=musicstore;";
             //starting the connection
@@ -48,7 +50,7 @@ namespace MusicStore
                 reader.Read();
                 replyBox.Text = "Welcome back: " + username + "! ";
                 //  SellPage sellpage = new SellPage(username, reader.GetInt32(0));
-                Account userpage = new Account(username, reader.GetInt32(0));
+                Account userpage = new Account(username, reader.GetInt32(0), itemIDs);
                 userpage.FormClosed += new FormClosedEventHandler(sellpage_closed);
                 this.Hide();
                 userpage.Show();
