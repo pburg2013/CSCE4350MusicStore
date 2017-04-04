@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,12 +47,13 @@ namespace MusicStore
                 //user name and password is correct
                 reader.Read();
                 replyBox.Text = "Welcome back: " + username + "! ";
-                SellPage sellpage = new SellPage(username, reader.GetInt32(0));
-                sellpage.FormClosed += new FormClosedEventHandler(sellpage_closed);
+                //  SellPage sellpage = new SellPage(username, reader.GetInt32(0));
+                Account userpage = new Account(username, reader.GetInt32(0));
+                userpage.FormClosed += new FormClosedEventHandler(sellpage_closed);
                 this.Hide();
-                sellpage.Show();
+                userpage.Show();
                 
-
+                
             }
             else
                 replyBox.Text = "Invalid username or password try again!";
@@ -99,7 +100,7 @@ namespace MusicStore
                         int x = commandDatabase.ExecuteNonQuery();
                         if (x > 0)
                         {
-                            replyBox.Text = "You have successfully signed up! ";
+                            replyBox.Text = "You have successfully signed up! You can login now!";
                         }
                         else
                         {
